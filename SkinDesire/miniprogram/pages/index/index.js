@@ -1,5 +1,4 @@
 const app = getApp()
-
 const db = wx.cloud.database()
 const userInfoCollection = db.collection('userInfo')
 
@@ -75,22 +74,7 @@ Page({
   // 生命周期函数--监听页面加载
 
   onLoad: function(options) {
-    userInfoCollection
-      .get()
-      .then(res => {
-        this.setData({
-          userInfos: res.data
-        }, res => {
-          wx.stopPullDownRefresh()
-        })
-      })
   },
-
-	// DotStyle(e) {
-	// 	this.setData({
-	// 		DotStyle: e.detail.value
-	// 	})
-	// },
 
 	// cardSwiper
 	cardSwiper(e) {

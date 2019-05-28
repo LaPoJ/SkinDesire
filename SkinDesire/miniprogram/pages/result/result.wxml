@@ -1,0 +1,100 @@
+<view class="loading" hidden="{{ loadHidden }}"></view>
+<view class=" page" hidden="{{ resultHidden }}">
+	<view class="prompt margin-top-lg margin-right-lg margin-left-lg flex justify-center align-center bg-white shadow padding-xs">
+		<text class="text-xs">检测结果仅供参考</text>
+	</view>
+  <view class="result-card flex margin-left-lg margin-bottom-lg margin-right-lg bg-white shadow">
+    <!-- 检测的分数	 -->
+		
+    <view class="result-left flex basis-sm justify-center align-center">
+      <canvas canvas-id="runCanvas" id="runCanvas" class="canvas"></canvas>
+    </view>
+    <!-- 结果  -->
+    <view class="result-right flex basis-lg flex-direction  justify-center ">
+      <view class="skin padding-xs margin-right-lg">
+        <text class="text-df">性别</text>
+        <text class="margin text-black text-bold text-xxl">{{ gender.value == 'Male' ? "男" : "女"}}</text>
+      </view>
+      <view class="skin padding-xs margin-top-sm margin-right-lg">
+        <text class="text-df">颜值</text>
+        <text class="margin text-black text-bold text-xxl">{{ gender.value == 'Male' ?  beauty.male_score : beauty.female_score }}</text>
+      </view>
+
+      <view class="skin padding-xs margin-top-sm margin-right-lg ">
+        <text class="text-df">肤龄</text>
+        <text class="margin text-black text-bold text-xxl">{{age.value}}</text>
+      </view>
+    </view>
+  </view>
+
+	<!-- 青春痘 acne-->
+  <view class="skins bg-white margin-sm shadow">
+		<view class="flex solid-bottom">
+				<text class="text-lg margin-sm text-black text-bold padding-left-sm">青春痘</text>
+				<text class="mytag cu-tag text-sm round margin-sm">{{ skinstatus.acne > 66.6 ? "重度" : skinstatus.acne > 33.3 ? "中度" : "轻度"}}</text>
+		</view>
+    <view class="bg-my-gary">
+			<view class="container padding">
+      <view class="cu-progress round xs">
+        <view class="bg-mild flex-sub"></view>
+        <view class="bg-mode flex-sub"></view>
+        <view class="bg-sev flex-sub"></view>
+      </view>
+			<view class="result-skin margin-top-xs flex text-sm">
+				<text class="flex flex-sub justify-center text-{{ pink }}">轻度</text>
+				<text class="flex flex-sub justify-center">中度</text>
+				<text class="flex flex-sub justify-center">重度</text>
+			</view>
+    </view>
+		</view>
+  </view>
+	<!-- 黑眼圈 dark_circle-->
+	<view class="skins bg-white margin-sm shadow">
+		<view class="flex solid-bottom">
+				<text class="text-lg margin-sm text-black text-bold padding-left-sm">黑眼圈</text>
+				<text class="mytag cu-tag text-sm round margin-sm">{{ skinstatus.dark_circle > 66.6 ? "重度" : skinstatus.dark_circle > 33.3 ? "中度" : "轻度"}}</text>
+		</view>
+    <view class="bg-my-gary">
+			<view class="container padding">
+      <view class="cu-progress round xs">
+        <view class="bg-mild flex-sub"></view>
+        <view class="bg-mode flex-sub"></view>
+        <view class="bg-sev flex-sub"></view>
+      </view>
+			<view class="result-skin margin-top-xs flex text-sm">
+				<text class="flex flex-sub justify-center text-{{ pink }}">轻度</text>
+				<text class="flex flex-sub justify-center">中度</text>
+				<text class="flex flex-sub justify-center">重度</text>
+			</view>
+    </view>
+		</view>
+  </view>
+	<!-- 色斑 stain-->
+	<view class="skins bg-white margin-sm shadow">
+		<view class="flex solid-bottom">
+				<text class="text-lg margin-sm text-black text-bold padding-left-sm">色斑</text>
+				<text class="mytag cu-tag text-sm round margin-sm">{{ skinstatus.stain > 66.6 ? "重度" : skinstatus.stain > 33.3 ? "中度" : "轻度"}}</text>
+		</view>
+		<view class="bg-my-gary">
+			<view class="container padding">
+				<view class="cu-progress round xs">
+					<view class="bg-mild flex-sub"></view>
+					<view class="bg-mode flex-sub"></view>
+					<view class="bg-sev flex-sub"></view>
+				</view>
+				<view class="result-skin margin-top-xs flex text-sm">
+					<text class="flex flex-sub justify-center text-{{ pink }}">轻度</text>
+					<text class="flex flex-sub justify-center">中度</text>
+					<text class="flex flex-sub justify-center">重度</text>
+				</view>
+			</view>
+		</view>
+  </view>
+	<view class="more margin-sm">
+		<text class=" flex padding-xs justify-center align-center text-sm">更多功能敬请期待...</text>
+	</view>
+  <view class="flex foot-btn" hidden="{{ footBtnHide }}">
+    <button class="cu-btn round flex-sub bg-red margin lg" bindtap="goDetection">重新检测</button>
+    <button class="cu-btn round flex-sub bg-blue margin lg" bindtap="goIndex">返回首页</button>
+  </view>
+</view>

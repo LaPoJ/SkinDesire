@@ -1,0 +1,40 @@
+.result-card{
+	height: 350rpx;
+	border-radius: 0 0 350rpx 350rpx/9% ;
+	/* border-bottom-right-radius: 170rpx; */
+	/* background-color: red; */
+
+}
+.skin{
+	background-color: #F7F7FA;
+	padding-left: 70rpx;
+	border-radius: 36rpx;
+}
+.canvas{
+	width: 200rpx;
+	height: 200rpx;
+	border-radius: 50%;
+	border: 1px solid #F9EBF1;
+	/* background-color: yellow; */
+}
+.bg-mild{
+	background-color: #FAEED9;
+}
+.bg-mode{
+	background-color: #F6D0AF;
+}
+.bg-sev{
+	background-color: #E69571;
+}
+.weights{
+	background-color: green;
+	/* position: absolute; */
+	float: left;
+}
+.bg-my-gary{
+	background-color: #F9F9F9;
+}	
+.mytag{
+	background-color: #EF8BAC !important;
+	color: #fff;
+}

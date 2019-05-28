@@ -5,7 +5,9 @@
 		"pages/index/index",
 		"pages/detection/detection",
 		"pages/recom/recom",
-		"pages/explan/explan"
+		"pages/explan/explan",
+		"pages/mask/mask",
+		"pages/result/result"
 	],
 	"window": {
 		"backgroundColor": "#F6F6F6",

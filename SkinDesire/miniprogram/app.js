@@ -1,6 +1,7 @@
 //app.js
 App({
   onLaunch: function () {
+		// console.log('app.js')
     if (!wx.cloud) {
       console.error('请使用 2.2.3 或以上的基础库以使用云能力')
     } else {
@@ -8,13 +9,6 @@ App({
         traceUser: true,
       })
     }
-
-    // 登录
-    wx.login({
-      success: res => {
-
-      }
-    })
 
     // 获取用户信息
     wx.getSetting({
@@ -25,14 +19,14 @@ App({
             success: res => {
               // 可以将 res 发送给后台解码出 unionId
               this.globalData.userInfo = res.userInfo
-
+							// console.log('global完成')
               // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
               // 所以此处加入 callback 以防止这种情况
               if (this.userInfoReadyCallback) {
                 this.userInfoReadyCallback(res)
               }
             }
-          })
+          })				
         }
       }
     })

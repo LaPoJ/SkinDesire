@@ -1,5 +1,9 @@
-<view class='UCenter-bg' style="background-image: url('../../images/sky-stars-constellations-astronomy-preview.jpg')">
-  <view class='space'>
+
+<!-- style="background-image:url('../../images/sky-stars-constellations-astronomy-preview.jpg')" -->
+<view class="UCenter-bg" >
+	<image class='bg-image' src='../../images/sky-stars-constellations-astronomy-preview.jpg' mode="aspectFill"></image>
+  <view class="space">
+
     <view class="stars ">
       <view class="star "></view>
       <view class="star pink "></view>
@@ -8,34 +12,34 @@
     </view>
   </view>
   <view class="userInfo">
-      <image class="cu-avatar round xl user-avat" src="{{ userInfo.avatarUrl }}" mode="aspectFill"/>
-      <text class="text-df padding-top-lg flex justify-center">{{ userInfo.nickName }}</text>
+    <image class="cu-avatar round xl user-avat" src="{{ userInfo.avatarUrl }}" mode="aspectFill" />
+    <text class="text-lg padding-top-lg flex justify-center">{{ userInfo.nickName }}</text>
   </view>
-  <image src='../../images/wave.gif' mode='scaleToFill' class='gif-wave'></image>
+  <image src='../../images/wave.gif' mode="scaleToFill" class="gif-wave"></image>
 </view>
-<view class="cu-list menu card-menu margin-top-xl margin-bottom-xl shadow-lg" style=''>
-  <view class="cu-item arrow">
-    <view class='content'>
-      <text class='icon-text text-red'></text>
-      <text class='text-grey'>检测结果</text>
+<view class="cu-list menu card-menu margin-top-xl margin-bottom-xl shadow-lg radius">
+  <view class="cu-item arrow" bindtap="goResult">
+    <view class="content">
+      <text class="cuIcon-text text-red"></text>
+      <text class="text-grey">我的检测</text>
     </view>
   </view>
   <view class="cu-item arrow">
-    <view class='content' bindtap="showQrcode">
-      <text class='icon-appreciatefill text-red'></text>
-      <text class='text-grey'>赞赏支持</text>
+    <view class="content">
+      <text class="cuIcon-appreciatefill text-red"></text>
+      <text class="text-grey">赞赏支持</text>
     </view>
   </view>
   <view class="cu-item arrow">
-    <button class='cu-btn content' open-type='feedback'>
-      <text class='icon-writefill text-cyan'></text>
-      <text class='text-grey'>意见反馈</text>
+    <button class="cu-btn content" open-type="feedback">
+      <text class="cuIcon-writefill text-cyan"></text>
+      <text class="text-grey">意见反馈</text>
     </button>
   </view>
   <view class="cu-item arrow">
-    <navigator class='content' url='../test/list' hover-class='none'>
-      <text class='icon-creativefill text-orange'></text>
-      <text class='text-grey'>Bug反馈</text>
+    <navigator class="content" hover-class="none">
+      <text class="cuIcon-creativefill text-orange"></text>
+      <text class="text-grey">Bug测试</text>
     </navigator>
   </view>
 </view>

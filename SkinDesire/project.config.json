@@ -3,9 +3,10 @@
 	"cloudfunctionRoot": "cloudfunctions/",
 	"setting": {
 		"urlCheck": false,
-		"es6": true,
+		"es6": false,
+		"enhance": true,
 		"postcss": true,
-		"minified": true,
+		"minified": false,
 		"newFeature": true,
 		"coverView": true,
 		"autoAudits": false,
@@ -24,6 +25,7 @@
 	"libVersion": "2.2.5",
 	"simulatorType": "wechat",
 	"simulatorPluginLibVersion": {},
+	"cloudfunctionTemplateRoot": "cloudfunctionTemplate",
 	"condition": {
 		"search": {
 			"current": -1,
@@ -41,7 +43,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 1,
+			"current": 5,
 			"list": [
 				{
 					"id": -1,
@@ -55,6 +57,33 @@
 					"name": "index",
 					"pathName": "pages/index/index",
 					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "检测",
+					"pathName": "pages/detection/detection",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 3,
+					"name": "检测结果",
+					"pathName": "pages/result/result",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "知识百解",
+					"pathName": "pages/explan/explan",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "面膜",
+					"pathName": "pages/recom/recom",
 					"scene": null
 				}
 			]

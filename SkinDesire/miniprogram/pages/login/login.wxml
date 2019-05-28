@@ -1,13 +1,13 @@
-<view wx:if="{{canIUse}}">
+<view >
   <view class='header'>
-    <image src='../../images/profile-image.jpg'></image>
+    <image src='../../images/wx.png'></image>
   </view>
   <view class='content'>
     <view>申请获取以下权限</view>
     <text>获得你的公开信息(昵称，头像等)</text>
   </view>
-  <button class='bottom' type='primary' open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="bindGetUserInfo">
-    授权登录
+  <button class='bottom wx:if="{{canIUse}}"' type='primary' open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onWeixinLogin">
+    {{ canIUse ? '微信授权登录' : '请升级微信版本' }}
   </button>
+	
 </view>
-<view wx:else>请升级微信版本</view>
