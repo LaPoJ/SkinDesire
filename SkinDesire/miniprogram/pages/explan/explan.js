@@ -4,6 +4,13 @@ Page({
 	data: {
 		TabCur: 0,
 		scrollLeft: 0,
+		acne:{}, 	//青春痘
+		blackhead: {}, 	//黑头
+		complexion: {}, 	//肤色
+		darkCircles: {}, 	//黑眼圈
+		property: {}, 	//肤质
+		roseAcne: {},		//玫瑰痤疮
+		spot: {},		//色斑
 		skins:[
 			{ 
 				title: "肤质",
@@ -50,16 +57,23 @@ Page({
 			{ title: "黑眼圈"}	
 		]
 	},
-	tabSelect(e) {
-		this.setData({
-			TabCur: e.currentTarget.dataset.id,
-			scrollLeft: (e.currentTarget.dataset.id - 1) * 60
-		})
-	},
 
 	// 生命周期函数--监听页面加载
 	onLoad: function (options) {
-		
+		wx.cloud.callFunction({
+			name: 'getSkin',
+			success: res => {
+				this.setData({
+					acne: res.result.data.acne,
+					blackhead: res.result.data.blackhead,
+					complexion: res.result.data.complexion,
+					darkCircles: res.result.data.darkCircles,
+					property: res.result.data.property,
+					roseAcne: res.result.data.roseAcne,
+					spot: res.result.data.spot
+				})
+			}
+		})
 	},
 
 	// 生命周期函数--监听页面初次渲染完成

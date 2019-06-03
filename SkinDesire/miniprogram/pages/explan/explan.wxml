@@ -1,9 +1,10 @@
 <!-- 皮肤知识解答 -->
 <!-- <view class="page"> -->
-  
+
 <van-tabs active="{{ active }}" color="blue" swipeable="true" animated="true">
-	<van-tab tab-active-class="text-blue" wx:for="{{ skins }}" wx:key="index" title="{{ item.title }}" >
-		<view class="margin bg-white" wx:for="{{ item.skinContent }}" wx:for-item="skincontent" wx:key="contentIndex">
+	<!-- 肤质 -->
+	<van-tab tab-active-class="text-blue" title="{{ property.title }}" >
+		<view class="margin bg-white" wx:for="{{ property.properties }}" wx:for-item="skincontent" wx:key="index">
 			<view class="solid-bottom padding">
 				<text class="text-black text-bold text-lg">{{ skincontent.name }}</text>
 				<text class="cuIcon-title text-blue padding-left-lg"> </text>
@@ -16,5 +17,35 @@
 				<text class="text-xs ">仅供参考</text>
 			</view>
 		</view>
+	</van-tab>
+	<!-- 肤色 -->
+	<van-tab tab-active-class="text-blue" title="{{ complexion.title }}">
+		<view class="content bg-white"></view>
+	</van-tab>
+	<!-- 色斑 -->
+	<van-tab tab-active-class="text-blue" title="{{ spot.title }}">
+		<view class="container bg-white margin-lg">
+			<view class="solid-bottom padding">
+				<text class="text-black text-bold text-lg">{{ spot.title }}?</text>
+			</view>
+			<view class="padding-sm solid-bottom">
+				<text class="text-lg">{{ spot.desc }}</text>
+			</view>
+			<view class="spot-img padding">
+				<image src="{{ spot.imageUrl }}"></image>
+			</view>
+		</view>
+	</van-tab>
+	<!-- 青春痘 -->
+	<van-tab tab-active-class="text-blue" title="{{ acne.title }}">
+	</van-tab>
+	<!-- 玫瑰痤疮 -->
+	<van-tab tab-active-class="text-blue" title="{{ roseAcne.title }}">
+	</van-tab>
+	<!-- 黑头 -->
+	<van-tab tab-active-class="text-blue" title="{{ blackhead.title }}">
+	</van-tab>
+	<!-- 黑眼圈 -->
+	<van-tab tab-active-class="text-blue" title="{{ darkCircles.title }}">
 	</van-tab>
 </van-tabs>
