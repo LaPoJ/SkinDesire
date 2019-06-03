@@ -58,7 +58,6 @@ Page({
 						isDetection: false,
 						faces: res.data.faces
 					})	
-					console.log(this.data.faces)
 
 					wx.showLoading({
 						title: '结果生成中',
@@ -69,14 +68,10 @@ Page({
 							faces: _this.data.faces
 						},
 						success: res => {
-							console.log(res)
 							wx.navigateTo({
 								url: '../result/result',
 							})
 							wx.hideLoading()
-						},
-						fail: err => {
-							console.log(err)
 						}
 					})				
         }
@@ -128,9 +123,7 @@ Page({
 			cloudPath: 'uploadFace/' + randString,
 			filePath: tempFilePaths[0],
 			success: res => {
-				// console.log(res) 
 				const { fileID } = res
-				// console.log(fileID)
 				_this.getFaceFlieURL(fileID)
 			}
 		})

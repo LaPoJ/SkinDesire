@@ -5,7 +5,7 @@
     <text class='camera-item cuIcon-camera flex justify-center' bindtap='takePhoto'></text>
     <text class='flex justify-center margin-top-xl'>点击拍照</text>
     <text class='flex justify-center text-red text-xl margin-top-xl'>注意</text>
-		
+
 		<text class='flex justify-center margin-top-sm text-red'>1.拍照请使用前置摄像头</text>
 		<text class='flex justify-center margin-top-sm text-red'>2.使人脸处于摄像头当中</text>
 		<text class='flex justify-center margin-top-sm text-red'>3.请确保人脸清晰可见</text>
@@ -17,7 +17,7 @@
 
   <!-- 存放照片 -->
   <view class='photo' hidden='{{ imageHidden}}'>
-    <image class="photo-user margin-top-xl" src='{{ tempFilePath }}' mode="widthFix"></image>
+    <image class="photo-user margin-top-xl" src='{{ tempFilePath }}' mode="aspectFit"></image>
   </view>
 
   <!-- 提交 -->
