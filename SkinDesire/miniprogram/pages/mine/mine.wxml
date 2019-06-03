@@ -27,7 +27,7 @@
   <view class="cu-item arrow">
     <view class="content">
       <text class="cuIcon-appreciatefill text-red"></text>
-      <text class="text-grey">赞赏支持</text>
+      <text class="text-grey">联系我们</text>
     </view>
   </view>
   <view class="cu-item arrow">
