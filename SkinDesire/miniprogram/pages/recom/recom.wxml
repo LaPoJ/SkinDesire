@@ -1,17 +1,18 @@
-<view class="cu-card article" bindtap='goFacialMask'>
-  <view class="cu-item shadow" wx:for="{{ recoms }}" wx:key="index">
+<view class="cu-card article">
+  <view class="cu-item shadow" wx:for="{{ masks }}" wx:key="index" data-postid="{{index}}"  bindtap='goFacialMask'>
     <view class="title">
-      <view class="text-cut">{{ item.name }}</view>
+      <view class="text-cut">{{ item.pName }}</view>
     </view>
     <view class="content">
-      <!-- https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg -->
-      <image src="{{ item.url }}" mode="aspectFill"></image>
+      <image src="{{ item.imgUrl }}" mode="aspectFill"></image>
       <view class="desc">
-        <view class="text-content">{{ item.decs }}</view>
+        <view class="text-content">{{ item.desc }}</view>
         <view >
-          <view  wx:for="{{item.tags}}"wx:for-item="tags" wx:key="tagsIndex"class="cu-tag light sm round {{tags.style }}">{{ tags.tagName }}</view>
+          <!-- <view  wx:for="{{item.tags}}"wx:for-item="tags" wx:key="tagsIndex"class="cu-tag light sm round {{tags.style }}">{{ tags.tagName }}</view> -->
+					<view class='price text-red text-lg'> {{ item.price }}</view>
         </view>
       </view>
     </view>
   </view>
+	<view class="cu-load {{isLoading?'loading':''}}"></view>
 </view>

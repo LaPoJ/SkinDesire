@@ -1,4 +1,5 @@
 {
   "usingComponents": {},
-	"navigationBarTitleText": "好用面膜"
+	"navigationBarTitleText": "好用面膜",
+	"enablePullDownRefresh": true
 }
