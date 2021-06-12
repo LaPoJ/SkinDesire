@@ -1,4 +1,5 @@
 const app = getApp()
+const faceAPI = require('../../uitls/config')
 
 Page({
 
@@ -13,27 +14,41 @@ Page({
 		faces: []
   },
 
-  
+
   // 生命周期函数--监听页面加载
   onLoad: function(options) {
-    
+
   },
-	
+
 	// 获取人脸检测结果
   getFaceResult() {
 		const _this = this
-    const APIKEY = "Rv9mO6aLclQsn_EoOb4RpF1gn4b6P3Nu"
-    const APISERET = "lgXaiCpSVwwrmTGsXTxSar3UJxUu-EXs"
+    const APIKEY = faceAPI.api_key
+    const APISERET = faceAPI.api_secret
     let base64Image = this.data.imageBS64
-    let attributes = 'gender,age,blur,facequality,beauty,skinstatus'
-		
-		// face++ API 
+		let attributes = 'gender,age,blur,facequality,beauty,skinstatus'
+
+		wx.cloud.callFunction({
+			name: "getFace",
+			data: {
+				APIKEY,
+				APISERET,
+				base64Image
+			},
+			success: res => {
+				console.log(res)
+			}
+		}).then(res => {
+			console.log(res)
+		})
+
+		// face++ API
     wx.request({
       url: "https://api-cn.faceplusplus.com/facepp/v3/detect",
       method: "POST",
       data: {
-        api_key: "Rv9mO6aLclQsn_EoOb4RpF1gn4b6P3Nu",
-        api_secret: "lgXaiCpSVwwrmTGsXTxSar3UJxUu-EXs",
+        api_key: faceAPI.api_key,
+        api_secret: faceAPI.api_secret,
         image_base64: base64Image,
         return_landmark: 2,
         return_attributes: attributes
@@ -46,7 +61,7 @@ Page({
           wx.hideLoading()
 					this.setData({
 						isDetection: false
-					})	
+					})
           wx.showModal({
             title: '警告',
             showCancel: false,
@@ -57,7 +72,7 @@ Page({
 					this.setData({
 						isDetection: false,
 						faces: res.data.faces
-					})	
+					})
 
 					wx.showLoading({
 						title: '结果生成中',
@@ -73,7 +88,7 @@ Page({
 							})
 							wx.hideLoading()
 						}
-					})				
+					})
         }
       },
       fail: err => {
@@ -88,7 +103,7 @@ Page({
 
 	// 检测中
   goResult() {
-    let that = this   
+    let that = this
     wx.showLoading({
       title: '检测中...',
     })
@@ -110,7 +125,7 @@ Page({
 					title: '加载中',
 				})
 				const tempFilePaths = res.tempFilePaths
-				that.goUploadFile(tempFilePaths)				
+				that.goUploadFile(tempFilePaths)
       }
     })
   },
